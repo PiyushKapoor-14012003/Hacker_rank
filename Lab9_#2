@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+long factorial(int n)
+{
+    int f=1,i=1;
+    while(i<=n)
+    {
+        f=f*i;
+        i+=1;
+    }
+    return f;
+}
+int main() {
+
+    float x,sum=0.0;
+    int n;
+    scanf("%f \n",&x);
+    scanf("%d \n",&n);
+    int p=1;
+    for(int i=1;i<=n;i++)
+    {
+        if(i%2==0)
+            sum=sum-(pow(x,p)/factorial(p));
+        else
+            sum= sum+(pow(x,p)/factorial(p));
+        p+=2;
+    }
+    printf("%f ",sum);
+    return 0;
+}
