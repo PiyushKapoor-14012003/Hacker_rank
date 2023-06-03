@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int height(int n)
+{
+    int i = 1, sum = 0;
+    while(1)
+    {
+       sum += i;
+        if(sum > n) {
+            return (i - 1);
+        } 
+        if(sum == n) {
+            return i;
+        }
+        i++;
+    }
+}
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int T;
+    scanf("%d \n",&T);
+    for(int i=1;i<=T;i++)
+    {
+        int num;
+        scanf("%d ",&num);
+        int h=height(num);
+        printf("%d \n",h);
+    }
+    return 0;
+}
