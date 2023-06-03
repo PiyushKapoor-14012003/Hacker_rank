@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int dd,mm,yyyy,total_days,i,max_days=30;
+ scanf("%d%d%d",&dd,&mm,&yyyy);
+    if(yyyy%4==0||yyyy%400==0)       
+        max_days=(mm==2)?29:((mm==4||mm==6||mm==9||mm==11)?30:31);
+    else
+        max_days=(mm==2)?28:((mm==4||mm==6||mm==9||mm==11)?30:31);
+    if(dd>max_days||dd<1)
+  printf("INVALID DATE");
+    else
+  {
+ total_days= 365*(yyyy-1)+yyyy/4+yyyy/400-yyyy/100+dd-1;
+ for(i=1;i<mm;i++)
+ {total_days=total_days+(i==2?28:(i==4||i==6||i==9||i==11)?30:31);
+ }
+ if(total_days%7==0)
+ {printf("MONDAY");
+ }
+ else if(total_days%7==1)
+ {printf("TUESDAY");
+ }
+ else if(total_days%7==2)
+ {printf("WEDNESDAY");
+ }
+ else if(total_days%7==3)
+ {printf("THURSDAY");
+ }
+ else if(total_days%7==4)
+ {printf("FRIDAY");
+ }
+ if(total_days%7==5)
+ {printf("SATURDAY");
+ }
+ if(total_days%7==6)
+ {printf("SUNDAY");
+ }
+ }
+    return 0;
+}
