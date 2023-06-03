@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    long int num;
+    scanf("%ld ",&num);
+    long int temp=0;
+    while(num!=0)
+    {
+        int r=num%10;
+        temp=temp*10+r;
+        num/=10;
+    }
+    for(;temp!=0;temp/=10)
+    {
+        int r=temp%10;
+        switch(r)
+        {
+            case 0:
+                printf("Zero ");
+                break;
+            case 1:
+                printf("One ");
+                break;
+            case 2:
+                printf("Two ");
+                break;
+            case 3:
+                printf("Three ");
+                break;
+            case 4:
+                printf("Four ");
+                break;
+            case 5:
+                printf("Five ");
+                break;
+            case 6:
+                printf("Six ");
+                break;
+            case 7:
+                printf("Seven ");
+                break;
+            case 8:
+                printf("Eight ");
+                break;
+            case 9:
+                printf("Nine ");
+                break;
+        }
+    }
+    return 0;
+}
