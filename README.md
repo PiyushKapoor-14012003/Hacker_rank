@@ -1,2 +1,2 @@
 # Hacker_rank
-All psit hackerrank programs
+All psit hackerrank programs altogether
