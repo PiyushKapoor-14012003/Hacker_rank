@@ -1,0 +1,31 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Complete the catAndMouse function below.
+
+void catAndMouse(int x,int y,int z)
+{
+    if(fabs(z-x)<fabs(z-y))
+        printf("Cat A\n");
+    else if(fabs(z-x)>fabs(z-y))
+        printf("Cat B\n");
+    else
+        printf("Mouse C\n");
+}
+int main()
+{
+    int q,x,y,z;
+    scanf("%d",&q);
+    for(int i=1;i<=q;i++)
+    {
+        scanf("%d %d %d",&x,&y,&z);
+        catAndMouse(x,y,z);
+    }
+}
