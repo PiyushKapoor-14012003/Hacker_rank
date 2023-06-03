@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    long int num1,num2,s,l;
+    scanf("%ld %ld \n",&num1,&num2);
+    if(num1>num2)
+    {
+        s=num2;
+        l=num1;
+    }
+    else
+    {
+        s=num1;
+        l=num2;
+    }
+    while(l%s!=0)
+    {
+        long int r=l%s;
+        l=s;
+        s=r;
+    }
+    printf("%ld ",s);
+    return 0;
+}
