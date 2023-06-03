@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() 
+{
+    float da,hra,gs,s;
+    scanf("%f",&s);
+    da=(s*20)/100;
+    hra=(s*25)/100;
+    gs=s+da+hra;
+    printf("%.2f",gs);
+    return 0;
+}
