@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int num;
+    scanf("%d ",&num);
+    int rev=0,temp=num;
+    while(temp!=0)
+    {
+        int r=temp%10;
+        rev=rev*10+r;
+        temp=(int)ceil(temp/10);
+    }
+    if(rev==num)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}
