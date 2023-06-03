@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int n,i,j,temp,rem,sum,fact;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        temp=i;
+        sum=0;
+        while(temp>0)
+        {
+            rem=temp%10;
+            fact=1;
+            for(j=1;j<=rem;j++)
+                fact=fact*j;
+            sum+=fact;
+            temp/=10;
+        }
+        if(sum==i)
+            printf("%d ",i);
+    }
+    return 0;
+}
