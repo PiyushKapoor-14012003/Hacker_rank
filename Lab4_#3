@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    float sub1,sub2,sub3,sub4,sub5;
+    int cp=0;
+    scanf("%f %f %f %f %f",&sub1,&sub2,&sub3,&sub4,&sub5);
+     if(sub1<0||sub1>100)
+    printf("INVALID MARKS");
+    else if(sub2<0||sub2>100)
+    printf("INVALID MARKS");
+    else if(sub3<0||sub3>100)
+    printf("INVALID MARKS");
+    else if(sub4<0||sub4>100)
+    printf("INVALID MARKS");
+    else if(sub5<0||sub5>100)
+    printf("INVALID MARKS");
+    else
+    {
+        if(sub1<30)
+            cp++;
+        if(sub2<30)
+            cp++;
+        if(sub3<30)
+            cp++;
+        if(sub4<30)
+            cp++;
+        if(sub5<30)
+            cp++;
+        float p=(sub1+sub2+sub3+sub4+sub5)/5.0;
+        if(p<33.00)
+            printf("Fail CP:%d",cp);
+        else
+        {
+            if(p>75.00&&p<100)
+                printf("Pass First division %.1f CP:%d",p,cp);
+            else if(p>59.00&&p<=74.00)
+                printf("Pass Second division %.1f CP:%d",p,cp);
+            else if(p>=33.00&&p<=59.00)
+                printf("Pass Third division %.1f CP:%d",p,cp);
+        }
+        
+    }
+    return 0;
+}
