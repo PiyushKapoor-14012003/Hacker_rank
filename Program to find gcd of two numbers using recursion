@@ -1,0 +1,28 @@
+//Program to find gcd of two numbers using recursion
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int gcd(int n1,int n2)
+{
+    int min=n1>=n2?n2:n1;
+    int max=n1>n2?n1:n2;
+    if(max%min==0)
+        return min;
+    else
+        return gcd(max%min,min);
+}
+
+int main() {
+
+    int t,num1,num2;
+    scanf("%d ",&t);
+    for(int i=1;i<=t;i++)
+    {
+        scanf("%d %d \n",&num1,&num2);
+        int Gcd=gcd(num1,num2);
+        printf("%d \n",Gcd);
+    }
+    
+    return 0;
+}
