@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    long sd=0,h;
+    int k;
+    int c;
+    do
+    {
+        c=getchar();
+        if(c != ' ')
+            sd += c -'0'; 
+    }
+    while(c != ' ');
+    scanf("%d",&k);
+    sd *= k;
+    
+    while(sd > 10)
+    {
+        h=0;
+        while(sd > 0)
+        {
+            h+= sd %10;
+            sd = sd /10;
+        }
+        sd =h;
+    }
+    printf("%ld\n",sd);
+    return 0;
+}
