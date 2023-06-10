@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int size,counter=1,key,start=0,end,m,index=-1;
+    scanf("%d ",&size);
+    end=size-1;
+    int ar[size];
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d ",&ar[i]);
+        if(i!=0&&ar[i]<ar[i-1])
+            counter=0;
+    }
+    scanf("%d ",&key);
+    if(counter==0)
+        printf("Binary search could not be implemented");
+    else
+    {
+        while(start!=end)
+        {
+            m=(start+end)/2;
+            if(ar[m]==key)
+            {
+                index=m;
+                break;
+            }
+            else if(ar[m]<key)
+                start=m+1;
+            else
+                end=m-1;
+        }
+        if(index==-1)
+            printf("Key does not exist");
+        else
+            printf("%d",index);
+    }
+    return 0;
+}
