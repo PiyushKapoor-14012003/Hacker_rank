@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int n,temp,i,j;
+    scanf("%d",&n);
+    int ar[n][n];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+            scanf("%d",&ar[i][j]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<i;j++)
+        {
+            temp=ar[i][j];
+            ar[i][j]=ar[j][i];
+            ar[j][i]=temp;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n/2;j++)
+        {
+            temp=ar[i][j];
+            ar[i][j]=ar[i][n-1-j];
+            ar[i][n-1-j]=temp;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+            printf("%d ",ar[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
